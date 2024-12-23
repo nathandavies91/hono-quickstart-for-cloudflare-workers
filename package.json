@@ -1,0 +1,25 @@
+{
+  "name": "api-worker",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "database:create": "npx wrangler d1 execute api --file database/destroy.sql && npx wrangler d1 execute api --file database/create.sql",
+    "database:init": "npm run database:create && npm run database:populate",
+    "database:populate": "npx wrangler d1 execute api --file database/test-data.sql",
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "prepare": "husky install",
+    "test": "exit"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.2",
+    "@cloudflare/workers-types": "^4.20241106.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.5.2",
+    "vitest": "2.0.5",
+    "wrangler": "^3.86.0"
+  },
+  "dependencies": {
+    "hono": "^4.6.9"
+  }
+}

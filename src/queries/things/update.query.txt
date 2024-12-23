@@ -1,0 +1,7 @@
+UPDATE
+  things
+SET
+  lastUpdatedAt = CURRENT_TIMESTAMP,
+  title = ?2
+WHERE
+  id = ?1

@@ -1,0 +1,4 @@
+SELECT
+  COUNT(*) as totalCount
+FROM
+  things

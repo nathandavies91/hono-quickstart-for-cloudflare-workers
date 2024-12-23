@@ -1,0 +1,8 @@
+SELECT
+  *
+FROM
+  things
+LIMIT
+  ?
+OFFSET
+  ?
